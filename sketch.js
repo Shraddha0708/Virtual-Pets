@@ -1,6 +1,6 @@
 var dog,happydog,normaldog;
 var database;
-var food,foodstack;
+var food =0,foodstack;
 
 function preload()
 {
