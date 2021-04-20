@@ -5,8 +5,8 @@ var food =0,foodstack;
 function preload()
 {
 	
-  normaldog=loadImage("images/dog1.png");
-  happydog=loadImage("images/dog2.png");
+  normaldog=loadImage("dog1.png");
+  happydog=loadImage("dog2.png");
 
 }
 
