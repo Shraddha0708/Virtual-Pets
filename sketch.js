@@ -1,6 +1,6 @@
 var dog,happydog,normaldog;
 var database;
-var food =0,foodstack;
+var foodS =0,foodstack;
 
 function preload()
 {
@@ -20,7 +20,7 @@ function setup() {
   dog.addImage(normaldog);
    dog.scale=0.1;
 
-   foodstack=database.ref('Food');
+   foodstack=database.ref('food');
    foodstack.on("value",readstack);
    foodstack.set(20);
   
@@ -31,11 +31,11 @@ function setup() {
 
 
 function draw() {  
-background("lavander");
+background("green");
 
 
 if(keyWentDown(UP_ARROW)){
-  writeStack(food);
+  writeStack(foodS);
   dog.addImage(happydog)
 }
   drawSprites();
@@ -44,18 +44,18 @@ if(keyWentDown(UP_ARROW)){
   fill("blue")
   stroke("blue")
   text("PRESS UP ARROW KEY FOR FEEDING YOUR PUPPY",100,150);
-  text("FEEDED FOOD ="+food,100,250);
+  text("FEEDED FOOD ="+foodS,100,250);
 
 
 
 }
 
 function readstack(data){
-food=data.val();
+foodS=data.val();
 
 }
 function writeStack(x){
-    
+    console.log(x);
   if(x<=0){
     x=0;
   }else{
